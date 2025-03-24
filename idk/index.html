@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShortsMaker Pro - By Prashant Pandey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" class="home-link">
+                <i class="fab fa-youtube"></i>
+                <h1>ShortsMaker Pro</h1>
+            </a>
+        </div>
+        <p class="tagline">Create viral YouTube Shorts in seconds!</p>
+        <div class="premium-badge">
+            <span class="free-tag">Free</span>
+            <span class="premium-tag">Premium Available</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#referral">Refer & Earn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="ad-container ad-horizontal">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1234567890123456"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="input-section">
+                <h2>Create Your YouTube Short</h2>
+                
+                <div class="premium-banner">
+                    <div class="premium-info">
+                        <i class="fas fa-crown"></i>
+                        <div>
+                            <h3>Upgrade to Premium!</h3>
+                            <p>Auto-import from Pinterest, unlimited videos/day, direct YT upload</p>
+                            <p class="premium-price">
+                                <span class="plan-option">₹25/month</span>
+                                <span class="price-tag">₹50/year <span class="discount-badge">SAVE 58%</span></span>
+                            </p>
+                        </div>
+                    </div>
+                    <button id="upgrade-btn">Upgrade Now</button>
+                </div>
+                
+                <div class="coupon-box">
+                    <input type="text" id="coupon-code" placeholder="Enter coupon code (e.g. PP6203, ORWAISE)">
+                    <button id="apply-coupon-btn">Apply</button>
+                </div>
+                
+                <div class="topic-search">
+                    <label for="topic-input">Enter a Topic:</label>
+                    <input type="text" id="topic-input" placeholder="Enter any topic for content ideas...">
+                    <button id="search-topic-btn">Search</button>
+                </div>
+                
+                <div class="platform-tabs">
+                    <button class="platform-tab active" data-platform="all">All Sources</button>
+                    <button class="platform-tab" data-platform="youtube">YouTube</button>
+                    <button class="platform-tab" data-platform="tiktok">TikTok</button>
+                    <button class="platform-tab" data-platform="instagram">Instagram</button>
+                    <button class="platform-tab premium-feature" data-platform="pinterest">Pinterest <i class="fas fa-crown"></i></button>
+                </div>
+                
+                <div class="search-results hidden" id="search-results">
+                    <h3>Content Ideas for "<span id="search-term"></span>"</h3>
+                    <div class="result-grid">
+                        <!-- Results will be populated dynamically -->
+                        <div class="result-placeholder">Search for a topic to see content ideas</div>
+                    </div>
+                    <div class="load-more">
+                        <button id="load-more-btn">Load More</button>
+                        <p class="results-count">Showing <span id="results-shown">0</span> of <span id="results-total">0</span> results</p>
+                    </div>
+                </div>
+                
+                <div class="copyright-notice">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Important: Please use only non-copyrighted videos, royalty-free content, or videos you own the rights to.</p>
+                </div>
+                
+                <div class="input-group">
+                    <label for="video-url">Video URL:</label>
+                    <input type="text" id="video-url" placeholder="Paste YouTube, TikTok, Instagram or any video URL">
+                    <button id="fetch-video-btn">Fetch Video</button>
+                </div>
+                
+                <div class="input-group">
+                    <label for="video-upload">Or Upload Your Own:</label>
+                    <input type="file" id="video-upload" accept="video/*">
+                </div>
+
+                <div class="free-sources">
+                    <p>Need free videos? Try these sources:</p>
+                    <div class="free-source-links">
+                        <a href="https://pixabay.com/videos/" target="_blank" class="affiliate-link"><i class="fas fa-film"></i> Pixabay</a>
+                        <a href="https://www.pexels.com/videos/" target="_blank" class="affiliate-link"><i class="fas fa-film"></i> Pexels</a>
+                        <a href="https://mixkit.co/free-stock-video/" target="_blank"><i class="fas fa-film"></i> Mixkit</a>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="description">Short Description:</label>
+                    <textarea id="description" placeholder="Enter catchy description for your Short"></textarea>
+                </div>
+
+                <div class="edit-tabs">
+                    <button class="tab-btn active" data-tab="style">Style</button>
+                    <button class="tab-btn" data-tab="music">Music</button>
+                    <button class="tab-btn" data-tab="text">Text</button>
+                    <button class="tab-btn" data-tab="effects">Effects</button>
+                    <button class="tab-btn" data-tab="filters">Filters</button>
+                </div>
+
+                <div class="tab-content" id="style-tab">
+                    <label>Style Options:</label>
+                    <div class="style-options">
+                        <button class="style-btn active" data-style="trending">Trending</button>
+                        <button class="style-btn" data-style="comedy">Comedy</button>
+                        <button class="style-btn" data-style="dramatic">Dramatic</button>
+                        <button class="style-btn" data-style="educational">Educational</button>
+                        <button class="style-btn" data-style="gaming">Gaming</button>
+                        <button class="style-btn" data-style="aesthetic">Aesthetic</button>
+                    </div>
+                </div>
+
+                <div class="tab-content hidden" id="music-tab">
+                    <label>Add Background Music (Royalty-Free):</label>
+                    <div class="music-library">
+                        <div class="music-item" data-music="trending1">
+                            <i class="fas fa-music"></i>
+                            <span>Trending Hit #1</span>
+                            <button class="play-preview-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="music-item" data-music="trending2">
+                            <i class="fas fa-music"></i>
+                            <span>Trending Hit #2</span>
+                            <button class="play-preview-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="music-item" data-music="lofi">
+                            <i class="fas fa-music"></i>
+                            <span>Lo-Fi Beats</span>
+                            <button class="play-preview-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="music-item" data-music="upbeat">
+                            <i class="fas fa-music"></i>
+                            <span>Upbeat Pop</span>
+                            <button class="play-preview-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="music-item" data-music="dramatic">
+                            <i class="fas fa-music"></i>
+                            <span>Dramatic Score</span>
+                            <button class="play-preview-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="music-upload">
+                            <label for="custom-music">Or upload your own (make sure you have the rights):</label>
+                            <input type="file" id="custom-music" accept="audio/*">
+                        </div>
+                    </div>
+                    <div class="free-sources">
+                        <p>Need free music? Try these sources:</p>
+                        <div class="free-source-links">
+                            <a href="https://mixkit.co/free-stock-music/" target="_blank"><i class="fas fa-music"></i> Mixkit</a>
+                            <a href="https://www.bensound.com/" target="_blank"><i class="fas fa-music"></i> Bensound</a>
+                            <a href="https://freemusicarchive.org/" target="_blank"><i class="fas fa-music"></i> Free Music Archive</a>
+                        </div>
+                    </div>
+                    <div class="music-controls">
+                        <label for="music-volume">Volume:</label>
+                        <input type="range" id="music-volume" min="0" max="100" value="70">
+                        <span id="volume-value">70%</span>
+                    </div>
+                </div>
+
+                <div class="tab-content hidden" id="text-tab">
+                    <label>Add Text Overlay:</label>
+                    <input type="text" id="text-overlay" placeholder="Enter text to overlay on video...">
+                    <div class="text-controls">
+                        <div class="text-option">
+                            <label>Style:</label>
+                            <select id="text-style">
+                                <option value="standard">Standard</option>
+                                <option value="neon">Neon</option>
+                                <option value="vintage">Vintage</option>
+                                <option value="bold">Bold Impact</option>
+                                <option value="subtitle">Subtitle</option>
+                            </select>
+                        </div>
+                        <div class="text-option">
+                            <label>Position:</label>
+                            <select id="text-position">
+                                <option value="top">Top</option>
+                                <option value="middle">Middle</option>
+                                <option value="bottom">Bottom</option>
+                            </select>
+                        </div>
+                        <div class="text-option">
+                            <label>Color:</label>
+                            <input type="color" id="text-color" value="#ffffff">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content hidden" id="effects-tab">
+                    <label>Add Video Effects:</label>
+                    <div class="effects-options">
+                        <button class="effect-btn" data-effect="none">None</button>
+                        <button class="effect-btn" data-effect="glitch">Glitch</button>
+                        <button class="effect-btn" data-effect="zoom">Zoom Pulse</button>
+                        <button class="effect-btn" data-effect="shake">Shake</button>
+                        <button class="effect-btn" data-effect="flash">Flash</button>
+                        <button class="effect-btn" data-effect="transition">3D Transition</button>
+                    </div>
+                    <div class="trim-controls">
+                        <label>Trim Video:</label>
+                        <div class="trim-slider">
+                            <input type="range" id="trim-start" min="0" max="100" value="0">
+                            <input type="range" id="trim-end" min="0" max="100" value="100">
+                        </div>
+                        <div class="trim-values">
+                            <span id="start-value">0:00</span>
+                            <span id="end-value">0:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content hidden" id="filters-tab">
+                    <label>Apply Filters:</label>
+                    <div class="filter-options">
+                        <button class="filter-btn" data-filter="none">None</button>
+                        <button class="filter-btn" data-filter="vintage">Vintage</button>
+                        <button class="filter-btn" data-filter="noir">Noir</button>
+                        <button class="filter-btn" data-filter="vhs">VHS</button>
+                        <button class="filter-btn" data-filter="vibrant">Vibrant</button>
+                        <button class="filter-btn" data-filter="dreamy">Dreamy</button>
+                    </div>
+                    <div class="adjustment-controls">
+                        <div class="adjustment">
+                            <label for="brightness">Brightness:</label>
+                            <input type="range" id="brightness" min="0" max="200" value="100">
+                        </div>
+                        <div class="adjustment">
+                            <label for="contrast">Contrast:</label>
+                            <input type="range" id="contrast" min="0" max="200" value="100">
+                        </div>
+                        <div class="adjustment">
+                            <label for="saturation">Saturation:</label>
+                            <input type="range" id="saturation" min="0" max="200" value="100">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="login-section">
+                    <h3>Login to Continue</h3>
+                    <p>Free users can create up to 20 videos per day. Premium users get unlimited videos.</p>
+                    <button id="google-login-btn" class="google-login-btn">
+                        <i class="fab fa-google"></i>
+                        Login with Google
+                    </button>
+                    <div class="user-info hidden">
+                        <div class="user-avatar">
+                            <img src="" alt="User Avatar" id="user-avatar-img">
+                        </div>
+                        <div class="user-details">
+                            <h4 id="user-display-name">Not logged in</h4>
+                            <p id="user-plan">Free Plan (20 videos/day)</p>
+                            <p id="user-videos-count">0/20 videos created today</p>
+                        </div>
+                        <button id="logout-btn">Logout</button>
+                    </div>
+                </div>
+
+                <div class="auto-upload-section premium-feature">
+                    <div class="auto-upload-header">
+                        <i class="fas fa-crown"></i>
+                        <h3>Premium Feature: Auto Upload</h3>
+                    </div>
+                    <p>Automatically upload to your YouTube channel (25-second shorts)</p>
+                    <div class="upload-settings">
+                        <div class="setting-group">
+                            <label for="youtube-account">YouTube Account:</label>
+                            <select id="youtube-account" disabled>
+                                <option value="">Connect your YouTube account</option>
+                            </select>
+                        </div>
+                        <div class="setting-group">
+                            <label for="upload-schedule">Upload Schedule:</label>
+                            <select id="upload-schedule" disabled>
+                                <option value="immediately">Upload immediately</option>
+                                <option value="daily">Schedule daily (unlimited for premium)</option>
+                                <option value="hourly">Schedule hourly</option>
+                            </select>
+                        </div>
+                        <div class="usage-stats">
+                            <p>Daily limit: <span class="highlight" id="videos-limit-display">0/20</span> videos used</p>
+                            <p class="premium-note">Get <strong>unlimited</strong> videos with premium!</p>
+                        </div>
+                    </div>
+                    <button id="connect-youtube-btn" disabled>Connect YouTube</button>
+                </div>
+
+                <button id="generate-btn">Generate Short</button>
+            </div>
+
+            <div class="preview-section">
+                <h2>Preview</h2>
+                <div class="video-preview">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div id="preview-placeholder">
+                                <i class="fas fa-play-circle"></i>
+                                <p>Your preview will appear here</p>
+                            </div>
+                            <video id="preview-video" controls style="display: none;"></video>
+                            <div id="text-overlay-preview" class="text-overlay"></div>
+                            <div id="filter-overlay" class="filter-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-controls">
+                    <button id="download-btn" disabled>Download Short</button>
+                    <button id="share-btn" disabled>Share to YouTube</button>
+                </div>
+                
+                <div class="premium-feature">
+                    <div class="batch-processing">
+                        <h3><i class="fas fa-crown"></i> Premium: Batch Processing</h3>
+                        <p>Create up to 30 similar videos in a single click!</p>
+                        <button id="batch-process-btn" disabled>Batch Process</button>
+                    </div>
+                </div>
+
+                <div class="donation-container">
+                    <h3>Support ShortsMaker Pro</h3>
+                    <p>If you find this tool useful, consider supporting us with a small donation to help keep it ad-free and maintained!</p>
+                    
+                    <div class="upi-payment">
+                        <h4>Pay Using UPI</h4>
+                        <div class="upi-details">
+                            <div class="upi-qr">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Rupee_symbol.svg/1200px-Indian_Rupee_symbol.svg.png" alt="UPI QR Code" id="upi-qr-placeholder">
+                                <button id="scan-qr-btn">Scan QR</button>
+                            </div>
+                            <div class="upi-id-section">
+                                <p>UPI ID:</p>
+                                <div class="upi-id-display">
+                                    <span id="upi-id-text">7738982315@fam</span>
+                                    <button id="copy-upi-btn"><i class="fas fa-copy"></i></button>
+                                </div>
+                                <p class="upi-info">Use any UPI app like Google Pay, PhonePe, Paytm, etc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="donation-options">
+                        <div class="donation-amount" data-amount="5">₹5</div>
+                        <div class="donation-amount" data-amount="10">₹10</div>
+                        <div class="donation-amount active" data-amount="20">₹20</div>
+                        <div class="donation-amount" data-amount="50">₹50</div>
+                        <div class="donation-amount" data-amount="100">₹100</div>
+                    </div>
+                    <button class="donate-btn">Donate ₹20</button>
+                </div>
+            </div>
+
+            <div class="ad-sidebar">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-1234567890123456"
+                     data-ad-slot="2345678901"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </main>
+
+    <div class="ad-container ad-horizontal">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1234567890123456"
+             data-ad-slot="3456789012"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <section class="features">
+        <h2>Why Use ShortsMaker Pro?</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Fast Creation</h3>
+                <p>Generate viral-worthy shorts in seconds</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-magic"></i>
+                <h3>AI Powered</h3>
+                <p>Our AI enhances your content automatically</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-music"></i>
+                <h3>Premium Music</h3>
+                <p>Add trending songs with automatic sync</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-palette"></i>
+                <h3>Pro Effects</h3>
+                <p>Studio-quality filters and effects</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Trending Styles <span class="sponsored-badge">Sponsored</span></h3>
+                <p>Access to latest viral formats and styles</p>
+            </div>
+            <div class="feature-card premium-highlight">
+                <i class="fas fa-crown"></i>
+                <h3>Premium Features</h3>
+                <p>Pinterest import, auto-upload, 30 videos/day</p>
+                <span class="premium-tag-small">Just ₹50/year</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="referral-program">
+        <h2>Refer Friends, Get Premium Free!</h2>
+        <p>Share ShortsMaker Pro with friends and receive coupon codes for lifetime premium access!</p>
+        <div class="referral-steps">
+            <div class="referral-step">
+                <div class="step-number">1</div>
+                <p>Share our link with friends</p>
+            </div>
+            <div class="referral-step">
+                <div class="step-number">2</div>
+                <p>They sign up using your referral</p>
+            </div>
+            <div class="referral-step">
+                <div class="step-number">3</div>
+                <p>You get coupon code PP6203</p>
+            </div>
+            <div class="referral-step">
+                <div class="step-number">4</div>
+                <p>Enjoy lifetime premium access!</p>
+            </div>
+        </div>
+        <div class="share-box">
+            <input type="text" id="referral-link" value="https://shortsmaker.pro/ref=PRASHANT" readonly>
+            <button id="copy-link-btn">Copy Link</button>
+        </div>
+    </section>
+
+    <div class="ad-container ad-horizontal">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1234567890123456"
+             data-ad-slot="4567890123"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <footer>
+        <p>Created by Prashant Pandey &copy; 2023 ShortsMaker Pro</p>
+        <p class="disclaimer">ShortsMaker Pro encourages the use of royalty-free or properly licensed content only.</p>
+        
+        <div class="support-contact">
+            <h4>Need Support?</h4>
+            <p>Email us at: <a href="mailto:officialprashant.orwaise@gmail.com">officialprashant.orwaise@gmail.com</a></p>
+        </div>
+        
+        <div class="commission-info">
+            <h4>Affiliate Disclosure</h4>
+            <p>Some links on this site are affiliate links, which means we may earn a commission if you click and make a purchase. This helps us maintain our free services.</p>
+            <ul>
+                <li>We only recommend products we genuinely believe in</li>
+                <li>Affiliate links are clearly marked with "(affiliate)" tag</li>
+                <li>Your support through these links is appreciated</li>
+            </ul>
+        </div>
+        
+        <div class="social-links">
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:officialprashant.orwaise@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <div class="modal hidden" id="premium-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Premium Features</h2>
+            
+            <div class="premium-features-list">
+                <div class="premium-feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Auto Upload to YouTube</h3>
+                        <p>Created videos ko direct YouTube par upload karein without manual uploads</p>
+                    </div>
+                </div>
+                
+                <div class="premium-feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Unlimited Videos</h3>
+                        <p>Free users get 20 videos/day, premium users get unlimited videos!</p>
+                    </div>
+                </div>
+                
+                <div class="premium-feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Advanced Text Effects</h3>
+                        <p>Professional animations and text effects for your videos</p>
+                    </div>
+                </div>
+                
+                <div class="premium-feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Watermark Removal</h3>
+                        <p>Videos without ShortsMaker watermark</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="premium-pricing">
+                <div class="price-box">
+                    <h3>Choose Your Plan</h3>
+                    <div class="pricing-options">
+                        <div class="price-option">
+                            <h4>Monthly</h4>
+                            <div class="price-tag">
+                                <span class="price">₹25/month</span>
+                            </div>
+                            <button class="buy-btn" data-plan="monthly">Select Plan</button>
+                        </div>
+                        <div class="price-option best-value">
+                            <span class="best-value-tag">Best Value</span>
+                            <h4>Yearly</h4>
+                            <div class="price-tag">
+                                <span class="price">₹50/year</span>
+                                <span class="discount-badge">SAVE 58%</span>
+                            </div>
+                            <button class="buy-btn" data-plan="yearly">Select Plan</button>
+                        </div>
+                        <div class="price-option">
+                            <h4>Lifetime</h4>
+                            <div class="price-tag">
+                                <span class="price">Contact Developer</span>
+                            </div>
+                            <p class="lifetime-note">For lifetime access coupon code, contact the developer directly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="or-divider">
+                <span>COUPON CODE REQUIRED</span>
+            </div>
+            
+            <div class="coupon-box-modal">
+                <h3>Use Coupon Code</h3>
+                <p class="coupon-instructions">Premium features ke liye coupon code zaruri hai!<br>Lifetime access ke liye developer se contact karein.</p>
+                <div class="coupon-input">
+                    <input type="text" id="modal-coupon-code" placeholder="Enter code (e.g. PP6203, ORWAISE)">
+                    <button id="modal-apply-coupon">Apply</button>
+                </div>
+                <p class="coupon-note">Share with friends to earn coupon codes!</p>
+                <p class="developer-contact">Contact at: <a href="mailto:officialprashant.orwaise@gmail.com">officialprashant.orwaise@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading-overlay" class="hidden">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">
+            <h3>Processing Your Video</h3>
+            <p id="processing-status">Downloading video...</p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="coupon-success" class="notification-popup hidden">
+        <i class="fas fa-check-circle"></i>
+        <h3>Success!</h3>
+        <p>Coupon code PP6203 applied successfully!</p>
+        <p>You now have lifetime premium access</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

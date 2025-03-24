@@ -1,0 +1,24 @@
+{
+  "name": "shortsmaker-pro",
+  "version": "1.0.0",
+  "description": "A powerful YouTube Shorts creator with premium features",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve",
+    "build": "mkdir -p dist && cp *.html *.css *.js dist/"
+  },
+  "keywords": [
+    "youtube",
+    "shorts",
+    "video-editor",
+    "web-app"
+  ],
+  "author": "Prashant Pandey",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "serve": "^14.2.1"
+  },
+  "homepage": "https://prashantpandey.github.io/shortsmaker-pro"
+} 
